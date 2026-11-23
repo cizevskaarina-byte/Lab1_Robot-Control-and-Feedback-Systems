@@ -25,7 +25,7 @@ A transfer-function model is needed because it lets me calculate in advance how 
 4. **Step metrics** -I used the formulas from Part 1.
 5. **Simulate** — I used RK4 simulation from Part 1 with time step dt = 0.0001 s for 12 s. Because joint settles at dc = 2 instead of 1, I replaced 1.0 with dc in motion equation, in overshoot (measured as a percentage of dc) and in the 2% settling band.
 
-> One sentence must explain, in your own words, **why the joint settles at `r/H` and not at `r`**.
+> **Why the joint settles at `r/H` and not at `r`**.
 > Joint settles at the r/H and not at the r because sensor report only half of the real angle (H = 0.5). Controller stops when measured value H\*y equals reference r = 1, which happens when real angle is y = r/H = 1/0.5 = 2.
 
 ---
@@ -60,7 +60,8 @@ Closed-loop poles are −2 ± 2j. Loop is stable because both poles lie to the l
 | 1   | Guide me through Part 1 step by step and explain it | Gave Part 1 code from the lab, one cell at a time with explanation                                                       | Compared every output with expected output in the lab: all 5 checkpoints matched             | Accepted                                                            |
 | 2   | My simulated overshoot is 8.64 %, not 4.32 %        | Hinted that 8.64 = 2 × 4.32                                                                                              | I found that I forgot to divide by dc; after the fix: 4.32 %                                 | Corrected my own mistake                                            |
 | 3   | Independent pole check                              | Gave a template with one blank                                                                                           | I first put dc in blank and got True only by coincidence; changed it to Kp·Km·Hg, still True | Corrected my own mistake                                            |
-| 4   | Help me write the report with correct English       | Asked me questions. I answered in Russian, the AI translated into English and wrote the Method sentences from my answers | I checked that I can explain every sentence                                                  | Accepted                                                            |
+| 4   | Help me write the report with correct English       | Asked me questions. I answered in Russian, the AI translated into English and wrote the Method sentences from my answers | I checked that I can explain every sentence                                                  | Accepted |
+| 5 | Report template attached to Lecture 1 was for Lab T6, not Lab T1 | Adapted  template for Lab T1(same sections, but with the Lab T1 tasks, numbers and file names) | I compared  sections with list in  Lab T1 brief (joint_tf.py, part2.py, report.md, Reality-Check, Co-development Log) | Accepted |
 
 ---
 
